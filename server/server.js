@@ -15,7 +15,8 @@ app.use(express.json());
 
 const allowedOrigins = [
     "http://localhost:3000", // For local development
-    "https://myportfolio-jd7d.onrender.com"// For Render deployment
+    "https://client-9lss4024n-soumen-pals-projects.vercel.app",// For Vercel deployment,
+    "https://deployportfolio.onrender.com" // render backend url
 ];
 
 app.use(
