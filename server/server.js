@@ -36,23 +36,30 @@ app.use("/api", messageRoute);
 
 // --------------------------deployment------------------------------
 
-const __dirname1 = path.resolve();
+// const __dirname1 = path.resolve();
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname1, "..", "/client/build")));
-    app.get("*", (req, res) =>
-        res.sendFile(path.resolve(__dirname1, "..", "client", "build", "index.html"))
-    );
-} else {
-    app.get("/", (req, res) => {
-        return res.json({
-            success: true,
-            message: "Server is running",
-        });
-    });
-}
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static(path.join(__dirname1, "..", "/client/build")));
+//     app.get("*", (req, res) =>
+//         res.sendFile(path.resolve(__dirname1, "..", "client", "build", "index.html"))
+//     );
+// } else {
+//     app.get("/", (req, res) => {
+//         return res.json({
+//             success: true,
+//             message: "Server is running",
+//         });
+//     });
+// }
 
 // --------------------------deployment------------------------------
+
+app.get("/", (req, res) => {
+    return res.json({
+        success: true,
+        message: "Server is running",
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
